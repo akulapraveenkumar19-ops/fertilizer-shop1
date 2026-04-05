@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Sri Thirumala Traders</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f8f2;
+}
+
+header {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4caf50;
+}
+
+.info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background: #1b5e20;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Sri Thirumala Traders</h1>
+    <p>Contact Us</p>
+</header>
+
+<div class="container">
+    <h2>Get in Touch</h2>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="info">
+        <p>📍 Kukatpalli, Hyderabad</p>
+        <p>📞 9876543210</p>
+        <p>📧 srithirumalatraders@gmail.com</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Sri Thirumala Traders</p>
+</footer>
+
+<script>
+function sendMessage(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+
+    alert("Thank you " + name + "! Your message has been sent.");
+
+    document.querySelector("form").reset();
+}
+</script>
+
+</body>
+</html>

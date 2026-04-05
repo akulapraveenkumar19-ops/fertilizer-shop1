@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Sri Thirumala Traders</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f8f2;
+}
+
+/* HEADER */
+header {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid white;
+    display: block;
+    margin: auto;
+}
+
+header h1 {
+    margin: 10px 0 5px;
+}
+
+header p {
+    font-size: 14px;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    background: #1b5e20;
+}
+
+nav a {
+    flex: 1 1 50%;
+    text-align: center;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-top: 1px solid #4caf50;
+}
+
+nav a:hover {
+    background: #4caf50;
+}
+
+/* CONTENT */
+.container {
+    padding: 15px;
+    margin: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #2e7d32;
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* DEVELOPER CARD */
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.developer-card {
+    max-width: 100%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.developer-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #2e7d32;
+}
+
+.role {
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 13px;
+    color: #555;
+}
+
+.skills span {
+    display: inline-block;
+    background: #e8f5e9;
+    padding: 5px 8px;
+    margin: 3px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+/* BUTTONS */
+.buttons button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #2e7d32;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    background: #1b5e20;
+    color: white;
+    padding: 10px;
+}
+
+/* DESKTOP VIEW */
+@media(min-width:768px){
+    nav a {
+        flex: none;
+        padding: 14px 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .developer-card {
+        max-width: 350px;
+        padding: 25px;
+    }
+
+    .buttons button {
+        width: auto;
+        padding: 10px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="profile">
+        <img src="photo.jpeg" alt="Profile">
+    </div>
+    <h1>SRI THIRUMALA TRANDERS</h1>
+    <p>About Our Fertilizer Shop</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="about.html">About</a>
+</nav>
+
+<div class="container">
+    <h2>Who We Are</h2>
+    <p>
+        Welcome to <span class="highlight">Sri Thirumala Traders</span>, your trusted fertilizer supplier.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+        Provide affordable and high-quality fertilizers to farmers.
+    </p>
+
+    <h2>What We Offer</h2>
+    <p>
+        Urea, DAP, Potash, Organic fertilizers and more.
+    </p>
+
+    <h2>Why Choose Us?</h2>
+    <p>
+        ✔ Trusted farmers<br>
+        ✔ Quality products<br>
+        ✔ Best prices
+    </p>
+
+    <h2>Owner Message</h2>
+    <p>
+        "We support farmers with best agricultural products."
+    </p>
+</div>
+
+<div class="container">
+    <h2 class="title">Meet the Developer</h2>
+
+    <div class="developer-card">
+        <img src="praveen 12.jpeg" alt="Praveen">
+
+        <h3>Praveen Yadav</h3>
+        <p class="role">Frontend Web Developer</p>
+
+        <p class="desc">
+            I build modern and responsive websites.
+        </p>
+
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+        </div>
+
+        <div class="buttons">
+            <button onclick="callDev()">📞 Call</button>
+            <button onclick="whatsappDev()">💬 WhatsApp</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Sri Thirumala Traders</p>
+</footer>
+
+<script>
+function callDev() {
+    window.location.href = "tel:7981779432";
+}
+
+function whatsappDev() {
+    let msg = "Hello Praveen, I need a website.";
+    window.open(`https://wa.me/917981779432?text=${msg}`, "_blank");
+}
+</script>
+
+</body>
+</html>

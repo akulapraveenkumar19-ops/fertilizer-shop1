@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Thirumala Traders</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial;
+}
+
+body{
+    background:#f4f8f2;
+}
+
+/* HEADER */
+header{
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+.profile img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:#1b5e20;
+}
+
+nav a{
+    color:white;
+    padding:10px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:#4caf50;
+}
+
+/* HERO */
+.hero{
+    background:url('https://images.unsplash.com/photo-1589927986089-35812388d1f4') no-repeat center/cover;
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:20px;
+    text-align:center;
+    padding:10px;
+}
+
+/* CONTAINER */
+.container{
+    padding:15px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:white;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+}
+
+/* BUTTON */
+button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:8px;
+    margin-top:8px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#4caf50;
+}
+
+/* CONTACT FORM */
+form input, form textarea{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* FOOTER */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:10px;
+    margin-top:20px;
+}
+
+/* 📱 MOBILE EXTRA */
+@media(max-width:600px){
+
+    .hero{
+        font-size:16px;
+        height:150px;
+    }
+
+    header h1{
+        font-size:18px;
+    }
+
+    nav a{
+        flex:1 1 50%;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="profile">
+        <img src="photo.jpeg">
+    </div>
+    <h1>SRI THIRUMALATRANDERS</h1>
+    <p>Best Fertilizers for Your Crops</p>
+
+    <p>📍 ChakalisheriPally, Chintapally</p>
+    <p>📞 9603699505, 6281567447</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="index.html#contact">Contact</a>
+</nav>
+
+<div class="hero">
+    Best Fertilizers for Your Crops 🌾
+</div>
+
+<div class="container">
+    <h2 align="center">Our Products</h2>
+    <div class="products" id="productList"></div>
+</div>
+
+<div class="container" id="contact">
+    <h2 align="center">Contact Us</h2>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="number" id="number" placeholder="Phone Number" required>
+        <textarea id="message" placeholder="Message"></textarea>
+
+        <button type="submit">📩 WhatsApp</button>
+        <button type="button" onclick="callNow()">📞 Call Now</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2026 Sri Thirumala Traders</p>
+</footer>
+
+<script>
+
+const products = [
+    { name: "Urea", price: 300, img: "urea fertilizer.jpeg" },
+    { name: "DAP", price: 1200, img: "DAP.jpeg" },
+    { name: "Potash", price: 900, img: "potash.jpeg" },
+    { name: "Compost", price: 500, img: "organic compost.jpeg" },
+    { name: "Bio Fertilizer", price: 700, img: "Bio Fertilizer.jpeg " },
+    { name: "Neem Cake", price: 400, img: "neem cake.jpeg" }
+];
+
+const productList = document.getElementById("productList");
+
+products.forEach(item=>{
+    let card=document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML=`
+        <img src="${item.img}">
+        <h3>${item.name}</h3>
+        <p>₹${item.price}</p>
+        <button onclick="buyProduct('${item.name}')">Buy</button>
+    `;
+
+    productList.appendChild(card);
+});
+
+function buyProduct(name){
+    alert(name+" added!");
+}
+
+function sendMessage(e){
+    e.preventDefault();
+
+    let name=document.getElementById("name").value;
+    let number=document.getElementById("number").value;
+    let message=document.getElementById("message").value;
+
+    let text=`Name:${name}%0APhone:${number}%0AMessage:${message}`;
+
+    window.open(`https://wa.me/919603699505?text=${text}`);
+}
+
+function callNow(){
+    window.location.href="tel:9603699505";
+}
+
+</script>
+
+</body>
+</html>
